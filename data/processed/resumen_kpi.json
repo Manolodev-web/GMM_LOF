@@ -1,0 +1,48 @@
+{
+  "meta": {
+    "titulo": "Auditoría Inteligente del Sector Minero de Bolivia",
+    "periodo": "1992 - 2025",
+    "total_meses": 407,
+    "variables_analizadas": ["ESTAÑO_NAC", "ZINC_NAC", "PLATA_NAC", "ORO_EXP", "PART_COOP_ZINC"]
+  },
+  "metricas": {
+    "total_anomalias_unicas": 30,
+    "alertas_gmm": 21,
+    "alertas_lof": 11,
+    "alertas_consenso": 2,
+    "umbral_tukey_oro": 3.51,
+    "umbral_gmm_logdens": -7.3292,
+    "umbral_lof_default": 1.5,
+    "k_vecinos_lof": 15,
+    "componentes_gmm": 3
+  },
+  "evento_mas_critico": {
+    "fecha": "2020-04-01",
+    "lof_score": 8.2637,
+    "log_dens_gmm": -48.2533,
+    "descripcion": "Cuarentena Rígida COVID-19: Paralización operativa simultánea en minería tradicional y exportaciones."
+  },
+  "casos_guiados": [
+    {
+      "id": "covid_2020",
+      "boton": "Caso 1: Parálisis Total (Abr 2020)",
+      "fecha": "2020-04-01",
+      "lof_score": 8.2637,
+      "resumen": "Colapso simultáneo de producción y exportación durante la cuarentena rígida. Detectado por consenso crítico (GMM + LOF)."
+    },
+    {
+      "id": "estano_2000",
+      "boton": "Caso 2: Anomalía Oculta (Mar 2000)",
+      "fecha": "2000-03-01",
+      "lof_score": 2.6064,
+      "resumen": "Caída puntual de estaño dentro de una década estable. GMM lo considera normal en su régimen, pero LOF lo aísla por densidad local."
+    },
+    {
+      "id": "oro_2022",
+      "boton": "Caso 3: Boom Aurífero (Ene 2022)",
+      "fecha": "2022-01-01",
+      "lof_score": 1.1863,
+      "resumen": "Pico máximo histórico de exportación de oro (6.37 TM finas) frente a volúmenes estables de minería tradicional."
+    }
+  ]
+}
