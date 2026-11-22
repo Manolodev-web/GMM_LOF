@@ -1,0 +1,42 @@
+[
+  {
+    "Paso": "01. Ingesta e Integración",
+    "Accion_Tecnica": "Parseo Año/Mes y unión relacional de 3 cuadros INE",
+    "Filas_Antes": 510,
+    "Filas_Despues": 432,
+    "Columnas": 20,
+    "Justificacion": "Se extraen solo observaciones mensuales (1990-2025) descartando subtotales anuales."
+  },
+  {
+    "Paso": "02. Limpieza de Nulos (NA)",
+    "Accion_Tecnica": "Filtrado de periodo común completo (1992-2025)",
+    "Filas_Antes": 432,
+    "Filas_Despues": 407,
+    "Columnas": 20,
+    "Justificacion": "Se excluyen 25 meses sin reporte en serie de oro (1990-1991 y 1 NA)."
+  },
+  {
+    "Paso": "03. Selección de Variables",
+    "Accion_Tecnica": "Eliminación de columna CADMIO",
+    "Filas_Antes": 407,
+    "Filas_Despues": 407,
+    "Columnas": 19,
+    "Justificacion": "91% de ceros (393/432); evita matrices singulares en GMM."
+  },
+  {
+    "Paso": "04. Feature Engineering y Log1p",
+    "Accion_Tecnica": "Ratios Cooperativas/Nacional y log1p(ORO_EXP)",
+    "Filas_Antes": 407,
+    "Filas_Despues": 407,
+    "Columnas": 22,
+    "Justificacion": "Controla multicolinealidad (r > 0.90) y reduce asimetría positiva del oro (Skewness = 1.54)."
+  },
+  {
+    "Paso": "05. Normalización Z-Score",
+    "Accion_Tecnica": "Centrado (media=0) y escalado (sd=1) en 5 variables",
+    "Filas_Antes": 407,
+    "Filas_Despues": 407,
+    "Columnas": 5,
+    "Justificacion": "Iguala magnitudes entre toneladas de Zinc y Oro para distancias en LOF."
+  }
+]
